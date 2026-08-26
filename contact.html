@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Taqtona</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contact — Taqtona</title>
+<link rel="icon" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; color: #0D0D0F; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #0D0D0F; text-decoration: none; }
+  a:hover { color: #FF4D00; }
+  input, textarea { outline: none; }
+  @keyframes tq-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,77,0,0.55); }
+    70% { box-shadow: 0 0 0 12px rgba(255,77,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,77,0,0); }
+  }
+</style>
+</helmet>
+<div style="font-family: Archivo, Helvetica, sans-serif; background: #FFFFFF; color: #0D0D0F; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #ECECEC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 44px); min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+      <a href="/" style="display: flex; align-items: center; padding: 14px 0;"><img src="assets/taqtona-primary-dark.svg" alt="Taqtona" style="height: 34px; width: auto; display: block;" /></a>
+      <nav style="display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); font-size: 14.5px; color: #3A3A3D; flex-wrap: wrap;">
+        <a href="/#products" style="color: #3A3A3D;">Products</a>
+        <a href="/#manufacturers" style="color: #3A3A3D;">Industries</a>
+        <a href="/contact" style="color: #0D0D0F; font-weight: 500;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width: 1240px; width: 100%; margin: 0 auto; padding: clamp(56px, 8vw, 100px) clamp(20px, 4vw, 44px) clamp(72px, 9vw, 110px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(40px, 6vw, 88px); flex: 1;">
+
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: inline-flex; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3A3A3D;">
+        <span style="width: 9px; height: 9px; border-radius: 50%; background: #FF4D00; display: block; animation: tq-pulse 2s ease-out infinite;"></span>
+        <span>Contact</span>
+      </div>
+      <h1 style="margin: 0; font-size: clamp(38px, 5.5vw, 64px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 600; text-wrap: balance;">Let's put AI on <span style="color: #FF4D00;">your</span> shop floor.</h1>
+      <p style="margin: 0; max-width: 460px; font-size: 17px; line-height: 1.55; color: #3A3A3D; text-wrap: pretty;">Tell us a little about your operation — we usually reply within the hour on working days.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px; font-size: 15px; color: #3A3A3D;">
+        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Email</span> info@apratimautomations.com</span>
+        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Phone</span> +91 88615 96468</span>
+        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Office</span> Bengaluru, India</span>
+      </div>
+    </div>
+
+    <form onSubmit="{{ submit }}" style="border: 1px solid #E7E7E9; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 22px; background: #FAFAFB; align-self: start;">
+      <label style="display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #3A3A3D;">Name</span>
+        <input value="{{ name }}" onChange="{{ setName }}" placeholder="Your name" style="height: 48px; border: 1px solid #D9D9DB; background: #FFFFFF; padding: 0 16px; font-family: Archivo, Helvetica, sans-serif; font-size: 15px; color: #0D0D0F;" style-focus="border-color: #FF4D00;" />
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #3A3A3D;">Company</span>
+        <input value="{{ company }}" onChange="{{ setCompany }}" placeholder="Company name" style="height: 48px; border: 1px solid #D9D9DB; background: #FFFFFF; padding: 0 16px; font-family: Archivo, Helvetica, sans-serif; font-size: 15px; color: #0D0D0F;" style-focus="border-color: #FF4D00;" />
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #3A3A3D;">What are you looking for?</span>
+        <textarea value="{{ message }}" onChange="{{ setMessage }}" placeholder="e.g. Instant costing for our machined parts" rows="4" style="border: 1px solid #D9D9DB; background: #FFFFFF; padding: 14px 16px; font-family: Archivo, Helvetica, sans-serif; font-size: 15px; color: #0D0D0F; resize: vertical;" style-focus="border-color: #FF4D00;"></textarea>
+      </label>
+      <button type="submit" style="height: 54px; border: none; background: #0D0D0F; color: #FFFFFF; font-family: Archivo, Helvetica, sans-serif; font-size: 15.5px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;" style-hover="background: #FF4D00;">Send on WhatsApp →</button>
+    </form>
+
+  </section>
+
+  <footer style="border-top: 1px solid #ECECEC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 36px clamp(20px, 4vw, 44px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <img src="assets/taqtona-primary-dark.svg" alt="Taqtona" style="height: 20px; width: auto;" />
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A6A6A9;">© 2026 Taqtona. All rights reserved.</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A6A6A9;">An Apratim Automations LLP product.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;918861596468&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { name: "", company: "", message: "" };
+  renderVals() {
+    const whatsappNumber = this.props.whatsappNumber ?? "918861596468";
+    return {
+      name: this.state.name,
+      company: this.state.company,
+      message: this.state.message,
+      setName: (e) => this.setState({ name: e.target.value }),
+      setCompany: (e) => this.setState({ company: e.target.value }),
+      setMessage: (e) => this.setState({ message: e.target.value }),
+      submit: (e) => {
+        e.preventDefault();
+        const { name, company, message } = this.state;
+        const text = `Hi Taqtona! I'm ${name || "—"}${company ? " from " + company : ""}.\n${message || "I'd like to know more about your products."}`;
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank");
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

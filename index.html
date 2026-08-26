@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taqtona — AI for manufacturing</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Taqtona — AI for manufacturing</title>
+<link rel="icon" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; color: #0D0D0F; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #0D0D0F; text-decoration: none; }
+  a:hover { color: #FF4D00; }
+  @keyframes tq-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,77,0,0.55); }
+    70% { box-shadow: 0 0 0 12px rgba(255,77,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,77,0,0); }
+  }
+  @keyframes tq-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+  @keyframes tq-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+</helmet>
+<div style="font-family: Archivo, Helvetica, sans-serif; background: #FFFFFF; color: #0D0D0F; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #ECECEC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 44px); min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+      <a href="#top" style="display: flex; align-items: center; padding: 14px 0;"><img src="assets/taqtona-primary-dark.svg" alt="Taqtona" style="height: 34px; width: auto; display: block;" /></a>
+      <nav style="display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); font-size: 14.5px; color: #3A3A3D; flex-wrap: wrap;">
+        <a href="#products" style="color: #3A3A3D;">Products</a>
+        <a href="#manufacturers" style="color: #3A3A3D;">Industries</a>
+        <a href="/contact" style="color: #3A3A3D;">Contact</a>
+        <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" style="display: inline-flex; align-items: center; height: 40px; padding: 0 20px; background: #0D0D0F; color: #FFFFFF; font-size: 14px; font-weight: 500;" style-hover="background: #FF4D00; color: #FFFFFF;">Book a demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 10vw, 120px) clamp(20px, 4vw, 44px) 0; text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 26px;">
+      <div style="display: inline-flex; align-items: center; gap: 12px; border: 1px solid #ECECEC; padding: 9px 18px; border-radius: 999px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3A3A3D;">
+        <span style="width: 9px; height: 9px; border-radius: 50%; background: #FF4D00; display: block; animation: tq-pulse 2s ease-out infinite;"></span>
+        <span>AI for manufacturing</span>
+      </div>
+      <h1 style="margin: 0; font-size: clamp(42px, 7vw, 84px); line-height: 1.02; letter-spacing: -0.03em; font-weight: 600; max-width: 980px; text-wrap: balance;">{{ heroHeadline }}</h1>
+      <p style="margin: 0; max-width: 640px; font-size: clamp(16px, 2vw, 20px); line-height: 1.55; color: #3A3A3D; text-wrap: pretty;">Taqtona turns drawings, part files and shop-floor data into finished work — costing, inspection, scheduling and CNC programming in one connected suite.</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; padding-top: 6px;">
+        <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" style="display: inline-flex; align-items: center; height: 52px; padding: 0 30px; background: #0D0D0F; color: #FFFFFF; font-size: 15px; font-weight: 500;" style-hover="background: #FF4D00; color: #FFFFFF;">Book a demo</a>
+        <a href="#products" style="display: inline-flex; align-items: center; height: 52px; padding: 0 30px; border: 1px solid #C6C6C8; color: #0D0D0F; font-size: 15px; font-weight: 500;" style-hover="border-color: #0D0D0F;">Explore products</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" style="max-width: 1240px; margin: 0 auto; padding: clamp(72px, 9vw, 120px) clamp(20px, 4vw, 44px) 0;">
+    <h2 style="margin: 0 0 clamp(32px, 5vw, 56px); font-size: clamp(32px, 4.5vw, 48px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; text-align: center;">Explore our products</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 28px;">
+
+      <article id="lens" style="border: 1px solid #E7E7E9; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 20px; background: #FFFFFF;" style-hover="border-color: #FF4D00;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="assets/taqtona-symbol-dark.svg" alt="" style="height: 21px; width: auto;" />
+          <span style="font-size: 23px; font-weight: 600; letter-spacing: -0.01em;">lens</span>
+        </div>
+        <div style="position: relative; height: 250px; background: #FAFAFB; border: 1px solid #EFEFF1; overflow: hidden;">
+          <div style="position: absolute; left: 6%; width: 50%; top: 62%; height: 1.5px; background: #3A3A3D;"></div>
+          <div style="position: absolute; left: 6%; top: 30%; bottom: 38%; width: 1.5px; background: #3A3A3D;"></div>
+          <div style="position: absolute; left: 6%; width: 38%; top: 30%; height: 1.5px; background: #3A3A3D;"></div>
+          <div style="position: absolute; left: 44%; top: 30%; height: 18%; width: 1.5px; background: #3A3A3D; transform: rotate(-38deg); transform-origin: top;"></div>
+          <div style="position: absolute; left: 14%; top: 44%; width: 24%; height: 1px; background: #C6C6C8;"></div>
+          <div style="position: absolute; left: 14%; top: 13%; padding: 3px 8px; border: 1px solid #C6C6C8; background: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #0D0D0F;">850.00 +0.05</div>
+          <div style="position: absolute; left: 22%; top: 44%; padding: 3px 8px; border: 1px solid #C6C6C8; background: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #0D0D0F;">250.00</div>
+          <div style="position: absolute; left: 18%; top: 74%; padding: 3px 8px; border: 1px solid #C6C6C8; background: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #0D0D0F;">Ø 80 H7</div>
+          <div style="position: absolute; left: 8%; top: 10%; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid #FF4D00; color: #FF4D00; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; background: #FFFFFF;">1</div>
+          <div style="position: absolute; left: 46%; top: 55%; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid #FF4D00; color: #FF4D00; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; background: #FFFFFF;">2</div>
+          <div style="position: absolute; left: 10%; top: 84%; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid #FF4D00; color: #FF4D00; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; background: #FFFFFF;">3</div>
+          <div style="position: absolute; right: 14px; top: 14px; bottom: 14px; width: 34%; background: #FFFFFF; border: 1px solid #E7E7E9; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #3A3A3D;">INSPECTION REPORT</span>
+            <div style="height: 7px; background: #F0F0F2;"></div>
+            <div style="height: 7px; background: #F0F0F2; width: 82%;"></div>
+            <div style="height: 7px; background: #F0F0F2; width: 90%;"></div>
+            <div style="height: 7px; background: #FFE3D6; width: 70%;"></div>
+            <div style="height: 7px; background: #F0F0F2; width: 86%;"></div>
+            <div style="margin-top: auto; display: flex; align-items: center; gap: 6px;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #FF4D00; animation: tq-blink 1.6s ease-in-out infinite;"></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #3A3A3D;">142 dims · 3.8s</span>
+            </div>
+          </div>
+        </div>
+        <h3 style="margin: 0; font-size: clamp(21px, 2.4vw, 26px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 600;">Is your ballooning error prone?</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3A3D; text-wrap: pretty;">Fully automated ballooning and inspection report generation straight from engineering drawings. Hours of manual dimension capture become seconds.</p>
+        <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" style="display: inline-flex; align-items: center; align-self: flex-start; height: 46px; padding: 0 24px; background: #0D0D0F; color: #FFFFFF; font-size: 14.5px; font-weight: 500; margin-top: auto;" style-hover="background: #FF4D00; color: #FFFFFF;">Book a demo</a>
+      </article>
+
+      <article id="os" style="border: 1px solid #E7E7E9; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 20px; background: #FFFFFF;" style-hover="border-color: #FF4D00;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="assets/taqtona-symbol-dark.svg" alt="" style="height: 21px; width: auto;" />
+          <span style="font-size: 23px; font-weight: 600; letter-spacing: -0.01em;">os</span>
+        </div>
+        <div style="height: 250px; background: #FAFAFB; border: 1px solid #EFEFF1; padding: 16px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; overflow: hidden;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #3A3A3D;">QUEUED</span>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; padding: 9px; display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #0D0D0F;">WO-1042</span><div style="height: 5px; background: #F0F0F2;"></div><div style="height: 5px; background: #F0F0F2; width: 60%;"></div></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; padding: 9px; display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #0D0D0F;">WO-1046</span><div style="height: 5px; background: #F0F0F2;"></div><div style="height: 5px; background: #F0F0F2; width: 72%;"></div></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #3A3A3D;">IN PRODUCTION</span>
+            <div style="background: #FFFFFF; border: 1px solid #FF4D00; padding: 9px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #0D0D0F;">WO-1038</span><span style="width: 6px; height: 6px; border-radius: 50%; background: #FF4D00; animation: tq-blink 1.6s ease-in-out infinite;"></span></div>
+              <div style="height: 5px; background: #F0F0F2;"></div>
+              <div style="height: 5px; background: #FF4D00; width: 64%;"></div>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; color: #FF4D00;">auto-rescheduled ↺</span>
+            </div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; padding: 9px; display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #0D0D0F;">WO-1040</span><div style="height: 5px; background: #F0F0F2;"></div><div style="height: 5px; background: #C6C6C8; width: 38%;"></div></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #3A3A3D;">DISPATCH</span>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; padding: 9px; display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #0D0D0F;">WO-1031</span><div style="height: 5px; background: #F0F0F2;"></div><div style="height: 5px; background: #0D0D0F; width: 100%;"></div></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; padding: 9px; display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #0D0D0F;">WO-1029</span><div style="height: 5px; background: #F0F0F2;"></div><div style="height: 5px; background: #0D0D0F; width: 100%;"></div></div>
+          </div>
+        </div>
+        <h3 style="margin: 0; font-size: clamp(21px, 2.4vw, 26px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 600;">Running your shop floor on spreadsheets?</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3A3D; text-wrap: pretty;">The new-generation ERP for engineering and manufacturing. Production, scheduling and inventory in one place — it plans, reschedules and chases exceptions for you.</p>
+        <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" style="display: inline-flex; align-items: center; align-self: flex-start; height: 46px; padding: 0 24px; background: #0D0D0F; color: #FFFFFF; font-size: 14.5px; font-weight: 500; margin-top: auto;" style-hover="background: #FF4D00; color: #FFFFFF;">Book a demo</a>
+      </article>
+
+      <article id="axis" style="border: 1px solid #E7E7E9; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 20px; background: #FFFFFF;" style-hover="border-color: #FF4D00;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="assets/taqtona-symbol-dark.svg" alt="" style="height: 21px; width: auto;" />
+          <span style="font-size: 23px; font-weight: 600; letter-spacing: -0.01em;">axis</span>
+        </div>
+        <div style="height: 250px; background: #0D0D0F; border: 1px solid #EFEFF1; display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden;">
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; line-height: 1.5; border-right: 1px solid #2A2A2E;">
+            <span style="color: #6B6B70;">%O1001 (SLOT PROFILE)</span>
+            <span style="color: #C6C6C8;">N10 G21 G90 G40</span>
+            <span style="color: #C6C6C8;">N20 T01 M06</span>
+            <span style="color: #FF4D00;">N30 G00 X-5.0 Y0.0</span>
+            <span style="color: #C6C6C8;">N40 G01 Z-2.5 F120</span>
+            <span style="color: #C6C6C8;">N50 G01 X40.0 Y0.0</span>
+            <span style="color: #C6C6C8;">N60 G02 X50.0 Y10.0 R10</span>
+            <span style="color: #6B6B70;">N70 G01 Y35.0</span>
+            <span style="color: #6B6B70;">N80 G00 Z5.0 M05</span>
+          </div>
+          <div style="position: relative; overflow: hidden;">
+            <span style="position: absolute; top: 12px; right: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6B6B70;">TOOLPATH SIM</span>
+            <svg viewBox="0 0 220 180" preserveAspectRatio="xMidYMid meet" style="position: absolute; inset: 16px; width: calc(100% - 32px); height: calc(100% - 32px); display: block;">
+              <line x1="20" y1="160" x2="200" y2="160" stroke="#2A2A2E" stroke-width="1"></line>
+              <line x1="20" y1="160" x2="20" y2="20" stroke="#2A2A2E" stroke-width="1"></line>
+              <polyline points="30,150 120,150 150,120 150,60 100,60 100,100 60,100" fill="none" stroke="#FF4D00" stroke-width="2"></polyline>
+              <circle cx="60" cy="100" r="5" fill="#FF4D00"></circle>
+            </svg>
+          </div>
+        </div>
+        <h3 style="margin: 0; font-size: clamp(21px, 2.4vw, 26px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 600;">Still writing G-code by hand?</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3A3D; text-wrap: pretty;">A CNC program generator with controller-specific output for FANUC, Siemens and HAAS. Build or import profiles, get cutting data and cycle time, and simulate the toolpath before it reaches the machine.</p>
+        <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" style="display: inline-flex; align-items: center; align-self: flex-start; height: 46px; padding: 0 24px; background: #0D0D0F; color: #FFFFFF; font-size: 14.5px; font-weight: 500; margin-top: auto;" style-hover="background: #FF4D00; color: #FFFFFF;">Book a demo</a>
+      </article>
+
+      <article id="costing" style="border: 1px solid #E7E7E9; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 20px; background: #FFFFFF;" style-hover="border-color: #FF4D00;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="assets/taqtona-symbol-dark.svg" alt="" style="height: 21px; width: auto;" />
+          <span style="font-size: 23px; font-weight: 600; letter-spacing: -0.01em;">costing</span>
+          <span style="margin-left: auto; padding: 5px 12px; border: 1px solid #FF4D00; color: #FF4D00; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;">Coming soon</span>
+        </div>
+        <div style="height: 250px; background: #FAFAFB; border: 1px solid #EFEFF1; display: grid; grid-template-columns: 1fr 1.1fr; overflow: hidden;">
+          <div style="position: relative; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 160 150" style="width: 70%; height: auto; display: block;">
+              <polygon points="80,15 140,45 80,75 20,45" fill="none" stroke="#0D0D0F" stroke-width="1.5"></polygon>
+              <polygon points="20,45 80,75 80,135 20,105" fill="none" stroke="#0D0D0F" stroke-width="1.5"></polygon>
+              <polygon points="140,45 80,75 80,135 140,105" fill="none" stroke="#0D0D0F" stroke-width="1.5"></polygon>
+              <rect x="132" y="38" width="12" height="12" fill="#FF4D00"></rect>
+            </svg>
+            <span style="position: absolute; bottom: 12px; left: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #3A3A3D;">STEP · 84 KB</span>
+          </div>
+          <div style="border-left: 1px solid #EFEFF1; background: #FFFFFF; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #3A3A3D;">DFM + COST BREAKDOWN</span>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3A3A3D;"><span>Material</span><span>38%</span></div><div style="height: 6px; background: #F0F0F2;"><div style="height: 6px; width: 38%; background: #0D0D0F;"></div></div></div>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3A3A3D;"><span>Machining</span><span>44%</span></div><div style="height: 6px; background: #F0F0F2;"><div style="height: 6px; width: 44%; background: #FF4D00;"></div></div></div>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3A3A3D;"><span>Finishing</span><span>18%</span></div><div style="height: 6px; background: #F0F0F2;"><div style="height: 6px; width: 18%; background: #C6C6C8;"></div></div></div>
+            <div style="margin-top: auto; border-top: 1px solid #EFEFF1; padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3A3A3D;">UNIT COST</span>
+              <span style="font-size: 18px; font-weight: 600;">₹ 412.60</span>
+            </div>
+          </div>
+        </div>
+        <h3 style="margin: 0; font-size: clamp(21px, 2.4vw, 26px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 600;">Missing RFQs because of slow DFM turnaround?</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3A3D; text-wrap: pretty;">Upload a 3D part file and get instant costing with a professional DFM report you can send back the same hour.</p>
+        <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" style="display: inline-flex; align-items: center; align-self: flex-start; height: 46px; padding: 0 24px; background: #0D0D0F; color: #FFFFFF; font-size: 14.5px; font-weight: 500; margin-top: auto;" style-hover="background: #FF4D00; color: #FFFFFF;">Book a demo</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="manufacturers" style="max-width: 1240px; margin: 0 auto; padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 44px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(36px, 5vw, 72px); border-top: 1px solid #ECECEC; padding-top: clamp(40px, 6vw, 64px); align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <h2 style="margin: 0; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.025em; font-weight: 600;">Designed for <span style="color: #FF4D00;">every</span> manufacturer</h2>
+        <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;">
+          <span>zero install</span>
+          <span style="color: #C6C6C8;">|</span>
+          <span>zero training</span>
+          <span style="color: #C6C6C8;">|</span>
+          <span>zero complexity</span>
+        </div>
+        <p style="margin: 0; max-width: 480px; font-size: 17px; line-height: 1.55; color: #3A3A3D;">Taqtona builds for machine shops, contract manufacturers and OEMs — from a single cell to a multi-plant operation.</p>
+      </div>
+      <div style="border-left: 1px solid #ECECEC; padding-left: clamp(24px, 4vw, 48px); display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+        <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="5">
+          <span style="font-size: {{ ind.fs }}; font-weight: {{ ind.fw }}; letter-spacing: -0.02em; line-height: 1.15; color: {{ ind.color }}; transition: color 0.5s ease;">{{ ind.name }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="trust" style="margin-top: clamp(80px, 10vw, 140px); background: #F5F5F5; border-top: 1px solid #ECECEC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 44px);">
+      <div style="display: flex; flex-direction: column; gap: 32px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3A3A3D; text-align: center;">Trusted by</span>
+        <div style="overflow: hidden; width: 100%;">
+          <div style="display: flex; align-items: center; gap: clamp(28px, 4vw, 48px); width: max-content; animation: tq-marquee 32s linear infinite;">
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/unimech.png" alt="Unimech" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="Mawerk" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="Hawk Aerospace" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="Lean Automation" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/cim-tools.png" alt="CIM Tools" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/komal-plast.png" alt="Komal Plast Machinery" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/dautya.png" alt="Dautya Aerospace" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/unimech.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/cim-tools.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/komal-plast.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/dautya.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="max-width: 1240px; margin: 0 auto; padding: clamp(72px, 9vw, 110px) clamp(20px, 4vw, 44px);">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="width: 9px; height: 9px; border-radius: 50%; background: #FF4D00; display: block; animation: tq-pulse 2s ease-out infinite;"></span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3A3A3D;">Live in days, not quarters</span>
+        </div>
+        <h2 style="margin: 0; font-size: clamp(30px, 4.2vw, 46px); line-height: 1.08; letter-spacing: -0.025em; font-weight: 600; max-width: 640px;">See Taqtona run on one of your own parts.</h2>
+      </div>
+      <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" style="display: inline-flex; align-items: center; height: 56px; padding: 0 34px; background: #FF4D00; color: #FFFFFF; font-size: 15.5px; font-weight: 500;" style-hover="background: #0D0D0F; color: #FFFFFF;">Book a demo</a>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #ECECEC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 36px clamp(20px, 4vw, 44px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <img src="assets/taqtona-primary-dark.svg" alt="Taqtona" style="height: 20px; width: auto;" />
+      <nav style="display: flex; gap: clamp(18px, 3vw, 30px); font-size: 14px; color: #3A3A3D; flex-wrap: wrap;">
+        <a href="/contact" style="color: #3A3A3D;">Contact</a>
+        <a href="#top" style="color: #3A3A3D;">Terms</a>
+        <a href="#top" style="color: #3A3A3D;">Privacy</a>
+        <a href="#top" style="color: #3A3A3D;">Security</a>
+      </nav>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A6A6A9;">© 2026 Taqtona. All rights reserved.</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A6A6A9;">An Apratim Automations LLP product.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroHeadline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;AI for manufacturing, made simple&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { activeInd: 0 };
+  componentDidMount() {
+    this._indTimer = setInterval(() => {
+      this.setState(s => ({ activeInd: (s.activeInd + 1) % 5 }));
+    }, 1500);
+  }
+  componentWillUnmount() { clearInterval(this._indTimer); }
+  renderVals() {
+    const names = ["Manufacturing", "Aerospace", "Defence", "Industrial", "Automotive"];
+    const industries = names.map((name, i) => ({
+      name,
+      fs: i === 0 ? "clamp(28px, 3.4vw, 40px)" : "clamp(22px, 2.8vw, 30px)",
+      fw: i === 0 ? 600 : 500,
+      color: i === this.state.activeInd ? "#FF4D00" : (i === 0 ? "#0D0D0F" : "#3A3A3D")
+    }));
+    return {
+      heroHeadline: this.props.heroHeadline ?? "AI for manufacturing, made simple",
+      industries
+    };
+  }
+}
+</script>
+</body>
+</html>
