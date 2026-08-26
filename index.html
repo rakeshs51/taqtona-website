@@ -26,21 +26,50 @@
   }
   @keyframes tq-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
   @keyframes tq-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .tq-header { position: sticky; top: 0; z-index: 50; background: #FFFFFF; border-bottom: 1px solid #ECECEC; }
+  .tq-header-inner { max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 44px); min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; }
+  .tq-logo { display: flex; align-items: center; padding: 14px 0; flex-shrink: 0; }
+  .tq-logo img { height: 34px; width: auto; display: block; }
+  .tq-nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); font-size: 14.5px; }
+  .tq-nav a { color: #3A3A3D; }
+  .tq-demo { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; background: #0D0D0F; color: #FFFFFF !important; font-size: 14px; font-weight: 500; }
+  .tq-demo:hover { background: #FF4D00; color: #FFFFFF !important; }
+  .tq-burger { display: none; width: 44px; height: 44px; margin-right: -8px; border: 0; background: transparent; padding: 0; cursor: pointer; align-items: center; justify-content: center; }
+  .tq-burger span, .tq-burger span::before, .tq-burger span::after { display: block; width: 20px; height: 1.5px; background: #0D0D0F; position: relative; transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease; }
+  .tq-burger span::before, .tq-burger span::after { content: ""; position: absolute; left: 0; }
+  .tq-burger span::before { top: -6px; }
+  .tq-burger span::after { top: 6px; }
+  .tq-burger.is-open span { background: transparent; }
+  .tq-burger.is-open span::before { top: 0; transform: rotate(45deg); }
+  .tq-burger.is-open span::after { top: 0; transform: rotate(-45deg); }
+  .tq-scrim { display: none; }
+  @media (max-width: 860px) {
+    .tq-burger { display: inline-flex; }
+    .tq-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 51; flex-direction: column; align-items: stretch; gap: 0; padding: 12px clamp(20px, 4vw, 44px) 24px; background: #FFFFFF; border-bottom: 1px solid #ECECEC; box-shadow: 0 16px 32px rgba(13,13,15,0.08); }
+    .tq-nav.is-open { display: flex; }
+    .tq-nav a { display: flex; align-items: center; min-height: 48px; font-size: 16px; }
+    .tq-demo { height: 48px; margin-top: 8px; }
+    .tq-scrim.is-open { display: block; position: fixed; inset: 74px 0 0 0; background: rgba(13,13,15,0.38); z-index: 45; }
+  }
 </style>
 </helmet>
 <div style="font-family: Archivo, Helvetica, sans-serif; background: #FFFFFF; color: #0D0D0F; overflow-x: hidden;">
 
-  <header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #ECECEC;">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 44px); min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
-      <a href="#top" style="display: flex; align-items: center; padding: 14px 0;"><img src="assets/taqtona-primary-dark.svg" alt="Taqtona" style="height: 34px; width: auto; display: block;" /></a>
-      <nav style="display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); font-size: 14.5px; color: #3A3A3D; flex-wrap: wrap;">
-        <a href="#products" style="color: #3A3A3D;">Products</a>
-        <a href="#manufacturers" style="color: #3A3A3D;">Industries</a>
-        <a href="/contact" style="color: #3A3A3D;">Contact</a>
-        <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" style="display: inline-flex; align-items: center; height: 40px; padding: 0 20px; background: #0D0D0F; color: #FFFFFF; font-size: 14px; font-weight: 500;" style-hover="background: #FF4D00; color: #FFFFFF;">Book a demo</a>
+  <header class="tq-header">
+    <div class="tq-header-inner">
+      <a href="#top" class="tq-logo" onClick="{{ closeMenu }}"><img src="assets/taqtona-primary-dark.svg" alt="Taqtona" /></a>
+      <button type="button" class="tq-burger {{ burgerClass }}" onClick="{{ toggleMenu }}" aria-label="{{ menuLabel }}" aria-expanded="{{ menuExpanded }}">
+        <span></span>
+      </button>
+      <nav class="tq-nav {{ navClass }}">
+        <a href="#products" onClick="{{ closeMenu }}">Products</a>
+        <a href="#manufacturers" onClick="{{ closeMenu }}">Industries</a>
+        <a href="/contact" onClick="{{ closeMenu }}">Contact</a>
+        <a href="https://wa.me/918861596468?text=Hi%2C%20I%20want%20a%20demo%20of%20Taqtona%21" target="_blank" class="tq-demo" onClick="{{ closeMenu }}">Book a demo</a>
       </nav>
     </div>
   </header>
+  <div class="tq-scrim {{ navClass }}" onClick="{{ closeMenu }}"></div>
 
   <section id="top" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 10vw, 120px) clamp(20px, 4vw, 44px) 0; text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center; gap: 26px;">
@@ -275,7 +304,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;heroHeadline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;AI for manufacturing, made simple&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { activeInd: 0 };
+  state = { activeInd: 0, menuOpen: false };
   componentDidMount() {
     this._indTimer = setInterval(() => {
       this.setState(s => ({ activeInd: (s.activeInd + 1) % 5 }));
@@ -292,7 +321,13 @@ class Component extends DCLogic {
     }));
     return {
       heroHeadline: this.props.heroHeadline ?? "AI for manufacturing, made simple",
-      industries
+      industries,
+      navClass: this.state.menuOpen ? "is-open" : "",
+      burgerClass: this.state.menuOpen ? "is-open" : "",
+      menuLabel: this.state.menuOpen ? "Close menu" : "Open menu",
+      menuExpanded: this.state.menuOpen ? "true" : "false",
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false })
     };
   }
 }
