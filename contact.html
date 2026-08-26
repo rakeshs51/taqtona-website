@@ -32,6 +32,20 @@
   .tq-nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); font-size: 14.5px; }
   .tq-nav a { color: #3A3A3D; }
   .tq-nav a.is-active { color: #0D0D0F; font-weight: 500; }
+  .tq-demo { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; background: #FF4D00; color: #FFFFFF !important; font-size: 14px; font-weight: 500; }
+  .tq-demo:hover { background: #0D0D0F; color: #FFFFFF !important; }
+  .tq-btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 28px; font-size: 15px; font-weight: 500; }
+  .tq-btn-primary { background: #FF4D00; color: #FFFFFF !important; }
+  .tq-btn-primary:hover { background: #0D0D0F; color: #FFFFFF !important; }
+  .tq-btn-ghost { border: 1px solid #C6C6C8; color: #0D0D0F; }
+  .tq-btn-ghost:hover { border-color: #0D0D0F; color: #0D0D0F; }
+  .tq-contact-link { color: #0D0D0F; }
+  .tq-sticky { display: none; }
+  @media (max-width: 860px) {
+    .tq-page { padding-bottom: 88px; }
+    .tq-sticky { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 42; gap: 10px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: #FFFFFF; border-top: 1px solid #ECECEC; }
+    .tq-sticky a { flex: 1; height: 48px; padding: 0 12px; font-size: 14.5px; }
+  }
   .tq-burger { display: none; width: 44px; height: 44px; margin-right: -8px; border: 0; background: transparent; padding: 0; cursor: pointer; align-items: center; justify-content: center; }
   .tq-burger span, .tq-burger span::before, .tq-burger span::after { display: block; width: 20px; height: 1.5px; background: #0D0D0F; position: relative; transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease; }
   .tq-burger span::before, .tq-burger span::after { content: ""; position: absolute; left: 0; }
@@ -46,11 +60,12 @@
     .tq-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 51; flex-direction: column; align-items: stretch; gap: 0; padding: 12px clamp(20px, 4vw, 44px) 24px; background: #FFFFFF; border-bottom: 1px solid #ECECEC; box-shadow: 0 16px 32px rgba(13,13,15,0.08); }
     .tq-nav.is-open { display: flex; }
     .tq-nav a { display: flex; align-items: center; min-height: 48px; font-size: 16px; }
+    .tq-demo { height: 48px; margin-top: 8px; }
     .tq-scrim.is-open { display: block; position: fixed; inset: 74px 0 0 0; background: rgba(13,13,15,0.38); z-index: 45; }
   }
 </style>
 </helmet>
-<div style="font-family: Archivo, Helvetica, sans-serif; background: #FFFFFF; color: #0D0D0F; min-height: 100vh; display: flex; flex-direction: column;">
+<div class="tq-page" style="font-family: Archivo, Helvetica, sans-serif; background: #FFFFFF; color: #0D0D0F; min-height: 100vh; display: flex; flex-direction: column;">
 
   <header class="tq-header">
     <div class="tq-header-inner">
@@ -62,6 +77,7 @@
         <a href="/#products" onClick="{{ closeMenu }}">Products</a>
         <a href="/#manufacturers" onClick="{{ closeMenu }}">Industries</a>
         <a href="/contact" class="is-active" onClick="{{ closeMenu }}">Contact</a>
+        <a href="https://wa.me/918861596468?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20on%20one%20of%20our%20parts." target="_blank" class="tq-demo" onClick="{{ closeMenu }}">Get a demo</a>
       </nav>
     </div>
   </header>
@@ -75,10 +91,11 @@
         <span>Contact</span>
       </div>
       <h1 style="margin: 0; font-size: clamp(38px, 5.5vw, 64px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 600; text-wrap: balance;">Let's put AI on <span style="color: #FF4D00;">your</span> shop floor.</h1>
-      <p style="margin: 0; max-width: 460px; font-size: 17px; line-height: 1.55; color: #3A3A3D; text-wrap: pretty;">Tell us a little about your operation — we usually reply within the hour on working days.</p>
+      <p style="margin: 0; max-width: 460px; font-size: 17px; line-height: 1.55; color: #3A3A3D; text-wrap: pretty;">Send a drawing or a STEP file — we usually reply within the hour on working days, and a demo takes 15 minutes.</p>
       <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px; font-size: 15px; color: #3A3A3D;">
-        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Email</span> info@apratimautomations.com</span>
-        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Phone</span> +91 88615 96468</span>
+        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Email</span><a class="tq-contact-link" href="mailto:info@apratimautomations.com">info@apratimautomations.com</a></span>
+        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Phone</span><a class="tq-contact-link" href="tel:+918861596468">+91 88615 96468</a></span>
+        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">WhatsApp</span><a class="tq-contact-link" href="https://wa.me/918861596468?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20on%20one%20of%20our%20parts." target="_blank">Message us now</a></span>
         <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Office</span> Bengaluru, India</span>
       </div>
     </div>
@@ -93,10 +110,14 @@
         <input value="{{ company }}" onChange="{{ setCompany }}" placeholder="Company name" style="height: 48px; border: 1px solid #D9D9DB; background: #FFFFFF; padding: 0 16px; font-family: Archivo, Helvetica, sans-serif; font-size: 15px; color: #0D0D0F;" style-focus="border-color: #FF4D00;" />
       </label>
       <label style="display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #3A3A3D;">Phone</span>
+        <input value="{{ phone }}" onChange="{{ setPhone }}" placeholder="+91" style="height: 48px; border: 1px solid #D9D9DB; background: #FFFFFF; padding: 0 16px; font-family: Archivo, Helvetica, sans-serif; font-size: 15px; color: #0D0D0F;" style-focus="border-color: #FF4D00;" />
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 8px;">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #3A3A3D;">What are you looking for?</span>
         <textarea value="{{ message }}" onChange="{{ setMessage }}" placeholder="e.g. Instant costing for our machined parts" rows="4" style="border: 1px solid #D9D9DB; background: #FFFFFF; padding: 14px 16px; font-family: Archivo, Helvetica, sans-serif; font-size: 15px; color: #0D0D0F; resize: vertical;" style-focus="border-color: #FF4D00;"></textarea>
       </label>
-      <button type="submit" style="height: 54px; border: none; background: #0D0D0F; color: #FFFFFF; font-family: Archivo, Helvetica, sans-serif; font-size: 15.5px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;" style-hover="background: #FF4D00;">Send on WhatsApp →</button>
+      <button type="submit" style="height: 54px; border: none; background: #FF4D00; color: #FFFFFF; font-family: Archivo, Helvetica, sans-serif; font-size: 15.5px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;" style-hover="background: #0D0D0F;">Request a demo on WhatsApp →</button>
     </form>
 
   </section>
@@ -111,19 +132,26 @@
     </div>
   </footer>
 
+  <div class="tq-sticky">
+    <a href="tel:+918861596468" class="tq-btn tq-btn-ghost">Call</a>
+    <a href="https://wa.me/918861596468?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20on%20one%20of%20our%20parts." target="_blank" class="tq-btn tq-btn-primary">Get a demo</a>
+  </div>
+
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;918861596468&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { name: "", company: "", message: "", menuOpen: false };
+  state = { name: "", company: "", phone: "", message: "", menuOpen: false };
   renderVals() {
     const whatsappNumber = this.props.whatsappNumber ?? "918861596468";
     return {
       name: this.state.name,
       company: this.state.company,
+      phone: this.state.phone,
       message: this.state.message,
       setName: (e) => this.setState({ name: e.target.value }),
       setCompany: (e) => this.setState({ company: e.target.value }),
+      setPhone: (e) => this.setState({ phone: e.target.value }),
       setMessage: (e) => this.setState({ message: e.target.value }),
       navClass: this.state.menuOpen ? "is-open" : "",
       burgerClass: this.state.menuOpen ? "is-open" : "",
@@ -133,8 +161,8 @@ class Component extends DCLogic {
       closeMenu: () => this.setState({ menuOpen: false }),
       submit: (e) => {
         e.preventDefault();
-        const { name, company, message } = this.state;
-        const text = `Hi Taqtona! I'm ${name || "—"}${company ? " from " + company : ""}.\n${message || "I'd like to know more about your products."}`;
+        const { name, company, phone, message } = this.state;
+        const text = `Hi Taqtona! I'm ${name || "—"}${company ? " from " + company : ""}${phone ? ". Phone: " + phone : ""}.\n${message || "I'd like a 15-min demo on one of our parts."}`;
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank");
       }
     };
