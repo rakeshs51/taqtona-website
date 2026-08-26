@@ -86,6 +86,32 @@
     </div>
   </section>
 
+  <section id="trust" style="margin-top: clamp(48px, 6vw, 80px); background: #F5F5F5; border-top: 1px solid #ECECEC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 44px);">
+      <div style="display: flex; flex-direction: column; gap: 32px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3A3A3D; text-align: center;">Trusted by</span>
+        <div style="overflow: hidden; width: 100%;">
+          <div style="display: flex; align-items: center; gap: clamp(28px, 4vw, 48px); width: max-content; animation: tq-marquee 32s linear infinite;">
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/unimech.png" alt="Unimech" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="Mawerk" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="Hawk Aerospace" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="Lean Automation" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/cim-tools.png" alt="CIM Tools" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/komal-plast.png" alt="Komal Plast Machinery" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/dautya.png" alt="Dautya Aerospace" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/unimech.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/cim-tools.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/komal-plast.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/dautya.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="products" style="max-width: 1240px; margin: 0 auto; padding: clamp(72px, 9vw, 120px) clamp(20px, 4vw, 44px) 0;">
     <h2 style="margin: 0 0 clamp(32px, 5vw, 56px); font-size: clamp(32px, 4.5vw, 48px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; text-align: center;">Explore our products</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 28px;">
@@ -241,32 +267,6 @@
         <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="5">
           <span style="font-size: {{ ind.fs }}; font-weight: {{ ind.fw }}; letter-spacing: -0.02em; line-height: 1.15; color: {{ ind.color }}; transition: color 0.5s ease;">{{ ind.name }}</span>
         </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <section id="trust" style="margin-top: clamp(80px, 10vw, 140px); background: #F5F5F5; border-top: 1px solid #ECECEC;">
-    <div style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 44px);">
-      <div style="display: flex; flex-direction: column; gap: 32px;">
-        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3A3A3D; text-align: center;">Trusted by</span>
-        <div style="overflow: hidden; width: 100%;">
-          <div style="display: flex; align-items: center; gap: clamp(28px, 4vw, 48px); width: max-content; animation: tq-marquee 32s linear infinite;">
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/unimech.png" alt="Unimech" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="Mawerk" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="Hawk Aerospace" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="Lean Automation" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/cim-tools.png" alt="CIM Tools" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/komal-plast.png" alt="Komal Plast Machinery" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/dautya.png" alt="Dautya Aerospace" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/unimech.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/cim-tools.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/komal-plast.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/dautya.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
