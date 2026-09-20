@@ -84,7 +84,7 @@
         <a href="/#products" onClick="{{ closeMenu }}">Products</a>
         <a href="/#manufacturers" onClick="{{ closeMenu }}">Industries</a>
         <a href="/contact" class="is-active" onClick="{{ closeMenu }}">Contact</a>
-        <a href="https://wa.me/916366273659?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20on%20one%20of%20our%20parts." target="_blank" class="tq-demo" onClick="{{ closeMenu }}">Get a demo</a>
+        <a href="https://wa.me/916366273659?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20for%20our%20shop%20floor." target="_blank" class="tq-demo" onClick="{{ closeMenu }}">Book a demo</a>
       </nav>
     </div>
   </header>
@@ -102,7 +102,7 @@
       <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px; font-size: 15px; color: #3A3A3D;">
         <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Email</span><a class="tq-contact-link" href="mailto:info@apratimautomations.com">info@apratimautomations.com</a></span>
         <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Phone</span><a class="tq-contact-link" href="tel:+916366273659">+91 63662 73659</a></span>
-        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">WhatsApp</span><a class="tq-contact-link" href="https://wa.me/916366273659?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20on%20one%20of%20our%20parts." target="_blank">Message us now</a></span>
+        <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">WhatsApp</span><a class="tq-contact-link" href="https://wa.me/916366273659?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20for%20our%20shop%20floor." target="_blank">Message us now</a></span>
         <span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A9; margin-right: 12px;">Office</span> Bengaluru, India</span>
       </div>
     </div>
@@ -141,7 +141,7 @@
 
   <div class="tq-sticky">
     <a href="tel:+916366273659" class="tq-btn tq-btn-ghost">Call</a>
-    <a href="https://wa.me/916366273659?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20on%20one%20of%20our%20parts." target="_blank" class="tq-btn tq-btn-primary">Get a demo</a>
+    <a href="https://wa.me/916366273659?text=Hi%20Taqtona%2C%20I%20want%20a%2015-min%20demo%20for%20our%20shop%20floor." target="_blank" class="tq-btn tq-btn-primary">Book a demo</a>
   </div>
 
 </div>
@@ -169,7 +169,7 @@ class Component extends DCLogic {
       submit: (e) => {
         e.preventDefault();
         const { name, company, phone, message } = this.state;
-        const text = `Hi Taqtona! I'm ${name || "—"}${company ? " from " + company : ""}${phone ? ". Phone: " + phone : ""}.\n${message || "I'd like a 15-min demo on one of our parts."}`;
+        const text = `Hi Taqtona! I'm ${name || "—"}${company ? " from " + company : ""}${phone ? ". Phone: " + phone : ""}.\n${message || "I'd like a 15-min demo for our shop floor."}`;
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank");
       }
     };
