@@ -33,6 +33,8 @@
   }
   @keyframes tq-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
   @keyframes tq-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .tq-marquee-track { animation: tq-marquee 32s linear infinite; }
+  @media (max-width: 860px) { .tq-marquee-track { animation-duration: 26.7s; } }
   .tq-header { position: sticky; top: 0; z-index: 50; background: #FFFFFF; border-bottom: 1px solid #ECECEC; }
   .tq-header-inner { max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 44px); min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; }
   .tq-logo { display: flex; align-items: center; padding: 14px 0; flex-shrink: 0; }
@@ -112,7 +114,7 @@
       <div style="display: flex; flex-direction: column; gap: 32px;">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3A3A3D; text-align: center;">Trusted by teams at</span>
         <div style="overflow: hidden; width: 100%;">
-          <div style="display: flex; align-items: center; gap: clamp(28px, 4vw, 48px); width: max-content; animation: tq-marquee 32s linear infinite;">
+          <div class="tq-marquee-track" style="display: flex; align-items: center; gap: clamp(28px, 4vw, 48px); width: max-content;">
             <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="Mawerk" style="height: 84px; width: auto; display: block;" /></div>
             <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="Hawk Aerospace" style="height: 84px; width: auto; display: block;" /></div>
             <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="Lean Automation" style="height: 84px; width: auto; display: block;" /></div>
