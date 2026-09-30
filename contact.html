@@ -70,6 +70,10 @@
     .tq-demo { height: 48px; margin-top: 8px; }
     .tq-scrim.is-open { display: block; position: fixed; inset: 74px 0 0 0; background: rgba(13,13,15,0.38); z-index: 45; }
   }
+  @media (max-width: 860px) {
+    .tq-footer-inner { flex-direction: column; align-items: flex-start !important; gap: 20px !important; }
+    .tq-footer-credits { align-items: flex-start !important; gap: 6px !important; }
+  }
 </style>
 </helmet>
 <div class="tq-page" style="font-family: Archivo, Helvetica, sans-serif; background: #FFFFFF; color: #0D0D0F; min-height: 100vh; display: flex; flex-direction: column;">
@@ -130,9 +134,9 @@
   </section>
 
   <footer style="border-top: 1px solid #ECECEC;">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 36px clamp(20px, 4vw, 44px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+    <div class="tq-footer-inner" style="max-width: 1240px; margin: 0 auto; padding: 36px clamp(20px, 4vw, 44px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
       <img src="assets/taqtona-primary-dark.svg" alt="Taqtona" style="height: 20px; width: auto;" />
-      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+      <div class="tq-footer-credits" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A6A6A9;">© 2026 Taqtona. All rights reserved.</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #3A3A3D;">An Apratim Automations LLP product.</span>
       </div>
