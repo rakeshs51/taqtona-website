@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 760">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 1.5L10 5L0 8.5z" fill="#B4B4B9"/>
+    </marker>
+    <style>
+      .o { fill: none; stroke: #A9A9AE; stroke-width: 1.6; stroke-linejoin: round; }
+      .h { fill: none; stroke: #C9C9CD; stroke-width: 1; }
+      .c { fill: none; stroke: #CDCDD1; stroke-width: 1; stroke-dasharray: 22 5 3 5; }
+      .d { fill: none; stroke: #B4B4B9; stroke-width: 1; }
+      .x { fill: none; stroke: #DADADD; stroke-width: 1; }
+      text { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 14px; fill: #8E8E93; }
+      .t { font-size: 12px; letter-spacing: 0.08em; fill: #A4A4A9; }
+      .b circle { fill: #FFFFFF; stroke: #FF4D00; stroke-width: 1.8; }
+      .b text { fill: #FF4D00; font-size: 14px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+      .bl { fill: none; stroke: #FF4D00; stroke-width: 1; opacity: 0.55; }
+      .b, .bl { opacity: 0; animation: pop 0.5s cubic-bezier(.2,.9,.3,1.3) forwards; transform-box: fill-box; transform-origin: center; }
+      .bl { animation-name: fade; }
+      .s1 { animation-delay: 0.5s; } .s2 { animation-delay: 0.9s; } .s3 { animation-delay: 1.3s; }
+      .s4 { animation-delay: 1.7s; } .s5 { animation-delay: 2.1s; } .s6 { animation-delay: 2.5s; }
+      @keyframes pop { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: scale(1); } }
+      @keyframes fade { from { opacity: 0; } to { opacity: 0.55; } }
+      .scan { animation: scan 6s ease-in-out 3s infinite; opacity: 0; }
+      @keyframes scan { 0% { opacity: 0; transform: translateY(0); } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; transform: translateY(420px); } }
+      @media (prefers-reduced-motion: reduce) {
+        .b, .bl { animation: none; opacity: 1; } .bl { opacity: 0.55; } .scan { display: none; }
+      }
+    </style>
+  </defs>
+  <!-- LEFT: flange, front view -->
+  <g>
+    <path class="c" d="M30 300H390M210 120V480"/>
+    <circle class="o" cx="210" cy="300" r="150"/>
+    <circle class="o" cx="210" cy="300" r="118"/>
+    <circle class="o" cx="210" cy="300" r="55"/>
+    <circle class="c" cx="210" cy="300" r="90"/>
+    <g class="o">
+      <circle cx="300" cy="300" r="13"/><circle cx="255" cy="378" r="13"/><circle cx="165" cy="378" r="13"/>
+      <circle cx="120" cy="300" r="13"/><circle cx="165" cy="222" r="13"/><circle cx="255" cy="222" r="13"/>
+    </g>
+    <!-- Ø300 leader -->
+    <path class="d" d="M316 194L370 140H440" marker-start="url(#a)"/>
+    <text x="378" y="132">Ø300</text>
+    <!-- bore dim -->
+    <path class="d" d="M171 339L249 261" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path class="d" d="M249 261L300 210" />
+    <text x="290" y="203">Ø110 H7</text>
+    <!-- PCD -->
+    <path class="d" d="M146 236L88 178H40" marker-start="url(#a)"/>
+    <text x="34" y="170">6× Ø26 EQ SP</text>
+  </g>
+
+  <!-- LEFT: flange, section view -->
+  <g>
+    <path class="c" d="M210 515V705"/>
+    <path class="o" d="M60 540H360V580H265V640H155V580H60Z"/>
+    <path class="o" d="M182 540V640M238 540V640"/>
+    <g class="h">
+      <path d="M70 580L100 550M95 580L125 550M120 580L150 550M145 580L175 550"/>
+      <path d="M245 580L275 550M270 580L300 550M295 580L325 550M320 580L350 550"/>
+      <path d="M160 640L182 618M160 615L182 593"/><path d="M240 640L262 618M240 615L262 593"/>
+    </g>
+    <path class="d" d="M38 540V580" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path class="x" d="M60 540H30M60 580H30"/>
+    <text x="14" y="566" transform="rotate(-90 22 560)">40</text>
+    <path class="d" d="M155 670H265" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path class="x" d="M155 640V680M265 640V680"/>
+    <text x="186" y="692">Ø110</text>
+    <text class="t" x="60" y="730">SECTION A–A</text>
+  </g>
+
+  <!-- orange scan line across the left part -->
+  <path class="scan" d="M40 120H380" stroke="#FF4D00" stroke-width="1" opacity="0"/>
+
+    <path class="bl s1" d="M210 300L120 120"/>
+  <g class="b s1"><circle cx="108" cy="96" r="16"/><text x="108" y="96">1</text></g>
+  <path class="bl s2" d="M300 300L360 250"/>
+  <g class="b s2"><circle cx="356" cy="252" r="16"/><text x="356" y="252">2</text></g>
+  <path class="bl s3" d="M265 610L330 640"/>
+  <g class="b s3"><circle cx="340" cy="646" r="16"/><text x="340" y="646">3</text></g>
+</svg>

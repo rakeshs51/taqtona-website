@@ -78,6 +78,29 @@
     .tq-footer-inner { flex-direction: column; align-items: flex-start !important; gap: 20px !important; }
     .tq-footer-credits { align-items: flex-start !important; gap: 6px !important; }
   }
+  .tq-hero { position: relative; isolation: isolate; padding-bottom: clamp(56px, 8vw, 110px); }
+  .tq-hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      linear-gradient(rgba(255,255,255,0) 72%, #FFFFFF),
+      linear-gradient(90deg, rgba(255,255,255,0) 14%, rgba(255,255,255,0.94) 33%, rgba(255,255,255,0.94) 67%, rgba(255,255,255,0) 86%),
+      url(assets/hero-drawing-left.svg) left top / auto 100% no-repeat,
+      url(assets/hero-drawing-right.svg) right top / auto 100% no-repeat,
+      linear-gradient(#F0F0F2 1px, transparent 1px) center top / 40px 40px,
+      linear-gradient(90deg, #F0F0F2 1px, transparent 1px) center top / 40px 40px; }
+  @media (max-width: 1440px) and (min-width: 861px) {
+    .tq-hero-bg { background-size: auto, auto, auto 74%, auto 74%, 40px 40px, 40px 40px; background-position: 0 0, 0 0, left 45%, right 45%, center top, center top; }
+  }
+  @media (max-width: 1180px) and (min-width: 861px) {
+    .tq-hero-bg { background-size: auto, auto, auto 58%, auto 58%, 40px 40px, 40px 40px; }
+  }
+  @media (max-width: 860px) {
+    .tq-hero-bg { opacity: 0.45; background:
+      linear-gradient(#FFFFFF 30%, rgba(255,255,255,0.6) 60%, #FFFFFF),
+      url(assets/hero-drawing-left.svg) left bottom / auto 60% no-repeat,
+      url(assets/hero-drawing-right.svg) right top / auto 60% no-repeat,
+      linear-gradient(#F0F0F2 1px, transparent 1px) center top / 32px 32px,
+      linear-gradient(90deg, #F0F0F2 1px, transparent 1px) center top / 32px 32px; }
+  }
 </style>
 </helmet>
 <div class="tq-page" style="font-family: Archivo, Helvetica, sans-serif; background: #FFFFFF; color: #0D0D0F; overflow-x: hidden;">
@@ -98,6 +121,8 @@
   </header>
   <div class="tq-scrim {{ navClass }}" onClick="{{ closeMenu }}"></div>
 
+  <div class="tq-hero">
+  <div class="tq-hero-bg" aria-hidden="true"></div>
   <section id="top" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 10vw, 120px) clamp(20px, 4vw, 44px) 0; text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center; gap: 26px;">
       <div style="display: inline-flex; align-items: center; gap: 12px; border: 1px solid #ECECEC; padding: 9px 18px; border-radius: 999px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3A3A3D;">
@@ -112,8 +137,9 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <section id="trust" style="margin-top: clamp(48px, 6vw, 80px); background: #F5F5F5; border-top: 1px solid #ECECEC;">
+  <section id="trust" style=" background: #F5F5F5; border-top: 1px solid #ECECEC;">
     <div style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 44px);">
       <div style="display: flex; flex-direction: column; gap: 32px;">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3A3A3D; text-align: center;">Trusted by teams at</span>
