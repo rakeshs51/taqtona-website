@@ -78,6 +78,25 @@
     .tq-footer-inner { flex-direction: column; align-items: flex-start !important; gap: 20px !important; }
     .tq-footer-credits { align-items: flex-start !important; gap: 6px !important; }
   }
+  .tq-hero { position: relative; isolation: isolate; padding-bottom: clamp(56px, 8vw, 110px); }
+  .tq-hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      linear-gradient(rgba(255,255,255,0) 70%, #FFFFFF),
+      linear-gradient(90deg, rgba(255,255,255,0) 16%, rgba(255,255,255,0.92) 34%, rgba(255,255,255,0.92) 66%, rgba(255,255,255,0) 84%),
+      url(assets/hero-halftone-left.svg) left bottom / auto 100% no-repeat,
+      url(assets/hero-halftone-right.svg) right bottom / auto 100% no-repeat; }
+  @media (max-width: 1440px) and (min-width: 861px) {
+    .tq-hero-bg { background-size: auto, auto, auto 80%, auto 80%; background-position: 0 0, 0 0, left 60%, right 60%; }
+  }
+  @media (max-width: 1180px) and (min-width: 861px) {
+    .tq-hero-bg { background-size: auto, auto, auto 62%, auto 62%; }
+  }
+  @media (max-width: 860px) {
+    .tq-hero-bg { opacity: 0.4; background:
+      linear-gradient(#FFFFFF 35%, rgba(255,255,255,0.5) 65%, #FFFFFF),
+      url(assets/hero-halftone-left.svg) left bottom / auto 55% no-repeat,
+      url(assets/hero-halftone-right.svg) right bottom / auto 55% no-repeat; }
+  }
 </style>
 </helmet>
 <div class="tq-page" style="font-family: Archivo, Helvetica, sans-serif; background: #FFFFFF; color: #0D0D0F; overflow-x: hidden;">
@@ -98,6 +117,8 @@
   </header>
   <div class="tq-scrim {{ navClass }}" onClick="{{ closeMenu }}"></div>
 
+  <div class="tq-hero">
+  <div class="tq-hero-bg" aria-hidden="true"></div>
   <section id="top" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 10vw, 120px) clamp(20px, 4vw, 44px) 0; text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center; gap: 26px;">
       <div style="display: inline-flex; align-items: center; gap: 12px; border: 1px solid #ECECEC; padding: 9px 18px; border-radius: 999px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3A3A3D;">
@@ -112,8 +133,9 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <section id="trust" style="margin-top: clamp(48px, 6vw, 80px); background: #F5F5F5; border-top: 1px solid #ECECEC;">
+  <section id="trust" style=" background: #F5F5F5; border-top: 1px solid #ECECEC;">
     <div style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 44px);">
       <div style="display: flex; flex-direction: column; gap: 32px;">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3A3A3D; text-align: center;">Trusted by teams at</span>
