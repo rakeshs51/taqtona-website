@@ -78,23 +78,40 @@
     .tq-footer-inner { flex-direction: column; align-items: flex-start !important; gap: 20px !important; }
     .tq-footer-credits { align-items: flex-start !important; gap: 6px !important; }
   }
-  .tq-hero { padding-bottom: clamp(56px, 8vw, 110px); }
-  .tq-backdrop { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  .tq-hero { position: relative; isolation: isolate; background: #FFFFFF; padding-bottom: clamp(56px, 8vw, 110px); }
+  .tq-hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      linear-gradient(rgba(255,255,255,0) 70%, #FFFFFF),
+      linear-gradient(90deg, rgba(255,255,255,0) 16%, rgba(255,255,255,0.92) 34%, rgba(255,255,255,0.92) 66%, rgba(255,255,255,0) 84%),
+      url(assets/hero-halftone-left.svg) left bottom / auto 100% no-repeat,
+      url(assets/hero-halftone-right.svg) right bottom / auto 100% no-repeat; }
+  @media (max-width: 1440px) and (min-width: 861px) {
+    .tq-hero-bg { background-size: auto, auto, auto 80%, auto 80%; background-position: 0 0, 0 0, left 60%, right 60%; }
+  }
+  @media (max-width: 1180px) and (min-width: 861px) {
+    .tq-hero-bg { background-size: auto, auto, auto 62%, auto 62%; }
+  }
+  .tq-backdrop { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.6;
     background:
       linear-gradient(90deg, rgba(255,255,255,0) 12%, rgba(255,255,255,0.9) 30%, rgba(255,255,255,0.9) 70%, rgba(255,255,255,0) 88%),
-      url(assets/hero-halftone-left.svg) left bottom / auto 90vh no-repeat,
-      url(assets/hero-halftone-right.svg) right bottom / auto 90vh no-repeat,
+      url(assets/floor-halftone-left.svg) left -2vh bottom / auto 82vh no-repeat,
+      url(assets/floor-halftone-right.svg) right -2vh bottom / auto 82vh no-repeat,
       #FFFFFF; }
-  .tq-panel, #manufacturers > div, #factory-vision > div, #contact > div, #trust > div { background: #FFFFFF; border: 1px solid #E7E7E9 !important; padding: clamp(24px, 4vw, 56px) !important; }
-  #trust { background: transparent !important; border-top: 0 !important; max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 44px); }
-  #trust > div { background: #F7F7F8; }
+  #manufacturers > div, #factory-vision > div, #contact > div { background: #FFFFFF; border: 1px solid #E7E7E9 !important; padding: clamp(24px, 4vw, 56px) !important; }
   #contact { padding-bottom: clamp(56px, 8vw, 96px) !important; }
+  #trust { background: #FFFFFF !important; border-top: 1px solid #ECECEC !important; border-bottom: 1px solid #ECECEC; }
+  #trust > div { padding-top: 32px !important; padding-bottom: 36px !important; }
+  .tq-logos { -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
   footer { background: #FFFFFF; }
   @media (max-width: 860px) {
+    .tq-hero-bg { opacity: 0.4; background:
+      linear-gradient(#FFFFFF 35%, rgba(255,255,255,0.5) 65%, #FFFFFF),
+      url(assets/hero-halftone-left.svg) left bottom / auto 55% no-repeat,
+      url(assets/hero-halftone-right.svg) right bottom / auto 55% no-repeat; }
     .tq-backdrop { background:
-      linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
-      url(assets/hero-halftone-left.svg) left bottom / auto 50vh no-repeat,
-      url(assets/hero-halftone-right.svg) right top 80px / auto 50vh no-repeat,
+      linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+      url(assets/floor-halftone-left.svg) left bottom / auto 50vh no-repeat,
+      url(assets/floor-halftone-right.svg) right top 80px / auto 50vh no-repeat,
       #FFFFFF; }
   }
 </style>
@@ -119,6 +136,7 @@
 
   <div class="tq-backdrop" aria-hidden="true"></div>
   <div class="tq-hero">
+  <div class="tq-hero-bg" aria-hidden="true"></div>
   <section id="top" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 10vw, 120px) clamp(20px, 4vw, 44px) 0; text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center; gap: 26px;">
       <div style="display: inline-flex; align-items: center; gap: 12px; border: 1px solid #ECECEC; padding: 9px 18px; border-radius: 999px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3A3A3D;">
@@ -137,24 +155,24 @@
 
   <section id="trust" style=" background: #F5F5F5; border-top: 1px solid #ECECEC;">
     <div style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 44px);">
-      <div style="display: flex; flex-direction: column; gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 24px;">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3A3A3D; text-align: center;">Trusted by teams at</span>
-        <div style="overflow: hidden; width: 100%;">
+        <div class="tq-logos" style="overflow: hidden; width: 100%;">
           <div class="tq-marquee-track" style="display: flex; align-items: center; gap: clamp(28px, 4vw, 48px); width: max-content;">
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="Mawerk" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="Hawk Aerospace" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="Lean Automation" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/cim-tools.png" alt="CIM Tools" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/komal-plast.png" alt="Komal Plast Machinery" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/dautya.png" alt="Dautya Aerospace" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/aequs.png" alt="Aequs" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/mawerk.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/hawk.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/lean-automation.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/cim-tools.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/komal-plast.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/dautya.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
-            <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 20px; padding: 20px 32px; flex: none;"><img src="assets/clients/aequs.png" alt="" style="height: 84px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/mawerk.png" alt="Mawerk" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/hawk.png" alt="Hawk Aerospace" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/lean-automation.png" alt="Lean Automation" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/cim-tools.png" alt="CIM Tools" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/komal-plast.png" alt="Komal Plast Machinery" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/dautya.png" alt="Dautya Aerospace" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/aequs.png" alt="Aequs" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/mawerk.png" alt="" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/hawk.png" alt="" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/lean-automation.png" alt="" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/cim-tools.png" alt="" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/komal-plast.png" alt="" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/dautya.png" alt="" style="height: 56px; width: auto; display: block;" /></div>
+            <div style="flex: none; padding: 0 clamp(8px, 1.5vw, 20px);"><img src="assets/clients/aequs.png" alt="" style="height: 56px; width: auto; display: block;" /></div>
           </div>
         </div>
       </div>
